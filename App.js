@@ -1,12 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PessoaAddTela from './telas/PessoaAddTela';
+import PessoaListTela from './telas/PessoaListTela';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+        //* Stack.Screen definine o nome e o componente que irá renderizar no roteamento       
+    <NavigationContainer>
+        <Stack.Navigator
+        initialRouteName='PessoAdd'
+        >          
+    <Stack.Screen 
+            name="PessoaAdd"
+            component={PessoaAddTela}
+          />
+          <Stack.Screen 
+          name ="PessoaList"
+          component={PessoaListTela}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 
