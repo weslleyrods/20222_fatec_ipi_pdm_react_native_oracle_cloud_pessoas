@@ -12,7 +12,7 @@ export default function App() {
         //* Stack.Screen definine o nome e o componente que irá renderizar no roteamento       
     <NavigationContainer>
         <Stack.Navigator
-        initialRouteName='PessoAdd'
+        initialRouteName='PessoaList'
         >          
     <Stack.Screen 
             name="PessoaAdd"
